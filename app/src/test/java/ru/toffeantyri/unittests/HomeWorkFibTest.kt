@@ -12,20 +12,32 @@ class HomeWorkFibTest{
     }
 
     @Test
-    fun `braces not correctly`(){
+    fun `braces not correctly`() {
         val result = HomeWorkFib.checkBraces("(a+b))")
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `braces inverted not correctly`() {
+        val result = HomeWorkFib.checkBraces(")a+b(")
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `braces inverted not correctly 2`() {
+        val result = HomeWorkFib.checkBraces(")(a+b)(")
         assertThat(result).isFalse()
     }
 
 
     @Test
-    fun `fib 0 is 0`(){
+    fun `fib 0 is 0`() {
         val result = HomeWorkFib.fib(0)
         assertThat(result).isEqualTo(0)
     }
 
     @Test
-    fun `fib 1 is 1`(){
+    fun `fib 1 is 1`() {
         val result = HomeWorkFib.fib(1)
         assertThat(result).isEqualTo(1)
     }

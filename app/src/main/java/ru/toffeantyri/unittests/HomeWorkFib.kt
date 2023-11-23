@@ -17,6 +17,12 @@ object HomeWorkFib {
         var a = 0L
         var b = 1L
         var c = 1L
+//        (1..n - 1).forEach { i -> //it correctly too
+//            c = a + b
+//            a = b
+//            b = c
+//        }
+
         (1..n - 2).forEach { i ->
             a = b
             b = c
@@ -31,9 +37,11 @@ object HomeWorkFib {
      * check braces set correctly
      * (a+b)) return false
      * (a+b) return true
+     * )a+b( return false
      * **/
 
     fun checkBraces(string: String): Boolean {
+        if (string.startsWith('(').not()) return false
         return string.count { it == '(' } == string.count { it == ')' }
     }
 }
