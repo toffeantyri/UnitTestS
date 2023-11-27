@@ -38,6 +38,28 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    packaging {
+        resources.merges.add("core.properties")
+
+        resources.excludes.apply {
+            add("META-INF/LICENSE")
+            add("META-INF/*.properties")
+            add("META-INF/AL2.0")
+            add("META-INF/LGPL2.1")
+            add("META-INF/DEPENDENCIES")
+            add("META-INF/LICENSE")
+            add("META-INF/LICENSE.txt")
+            add("META-INF/license.txt")
+            add("META-INF/NOTICE")
+            add("META-INF/NOTICE.txt")
+            add("META-INF/notice.txt")
+            add("META-INF/ASL2.0")
+            add("META-INF/*.kotlin_module")
+        }
+    }
+
+
 }
 
 dependencies {
@@ -63,7 +85,6 @@ dependencies {
     //lifecycle
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-runtime:2.6.2")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
 
     //timber
@@ -89,11 +110,12 @@ dependencies {
 
 
     implementation("androidx.test:core:1.5.0")
-    implementation("org.hamcrest:hamcrest-all:1.3")
-    implementation("android.arch.core:core-testing:1.1.1")
-    implementation("org.robolectric:robolectric:4.3.1")
-    implementation("org.mockito:mockito-core:5.3.1")
-    //implementation("com.linkedin.dexmaker:dexmaker-mockito:2.12.1")
+    testImplementation("org.hamcrest:hamcrest-all:1.3")
+    testImplementation("android.arch.core:core-testing:1.1.1")
+    testImplementation("org.robolectric:robolectric:4.3.1")
+    testImplementation("org.mockito:mockito-core:5.3.1")
+    //testImplementation("com.linkedin.dexmaker:dexmaker-mockito:2.12.1")
+
     //default testing lib
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
