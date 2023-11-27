@@ -45,12 +45,15 @@ dependencies {
     val kotlin_version = "1.9.0"
     val room_version = "2.6.0"
     val dagger_hilt_android_version = "2.48"
+    val retrofit_version = "2.9.0"
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     implementation("androidx.core:core-ktx:$kotlin_version")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.10.0")
+
+    //navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
@@ -63,6 +66,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime:2.6.2")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
 
+    //timber
+    implementation("com.jakewharton.timber:timber:4.7.1")
+
+
     //room
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
@@ -72,11 +79,21 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$dagger_hilt_android_version")
     ksp("com.google.dagger:hilt-android-compiler:$dagger_hilt_android_version")
 
-    val retrofit_version = "2.9.0"
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.11.0")
+    ksp("com.github.bumptech.glide:compiler:4.11.0")
+
     //network
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
-    implementation("com.squareup.retrofit2:converter-moshi:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
 
+
+    implementation("androidx.test:core:1.5.0")
+    implementation("org.hamcrest:hamcrest-all:1.3")
+    implementation("android.arch.core:core-testing:1.1.1")
+    implementation("org.robolectric:robolectric:4.3.1")
+    implementation("org.mockito:mockito-core:5.3.1")
+    //implementation("com.linkedin.dexmaker:dexmaker-mockito:2.12.1")
     //default testing lib
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -85,4 +102,6 @@ dependencies {
     //lib for beauty vis tests
     testImplementation("com.google.truth:truth:1.0.1")
     androidTestImplementation("com.google.truth:truth:1.0.1")
+
+
 }
