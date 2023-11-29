@@ -110,11 +110,20 @@ dependencies {
 
 
     implementation("androidx.test:core:1.5.0")
+    implementation("androidx.test:rules:1.5.0")
+
+    testImplementation("android.arch.core:core-testing:1.1.1")
+    androidTestImplementation("android.arch.core:core-testing:1.1.1")
+
     testImplementation("org.hamcrest:hamcrest-all:1.3")
     testImplementation("android.arch.core:core-testing:1.1.1")
     testImplementation("org.robolectric:robolectric:4.3.1")
     testImplementation("org.mockito:mockito-core:5.3.1")
     //testImplementation("com.linkedin.dexmaker:dexmaker-mockito:2.12.1")
+
+
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
     //default testing lib
     testImplementation("junit:junit:4.13.2")
